@@ -1,7 +1,6 @@
 package application.servises;
 
 import application.entities.DivisionEntity;
-import application.entities.EmployeeEntity;
 import application.exceptions.BusinessLogicException;
 import application.repositories.DivisionRepository;
 import application.validation.DivisionValidation;
@@ -13,7 +12,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
-
 import javax.persistence.EntityNotFoundException;
 import java.util.List;
 import java.util.Optional;
