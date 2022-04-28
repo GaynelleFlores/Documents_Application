@@ -1,0 +1,30 @@
+<persistence xmlns="http:getEmployeeByIdxmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+             http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd"
+             version="2.2">
+
+    <persistence-unit name="application.Main" transaction-type="RESOURCE_LOCAL">
+        <description>Hibernate EntityManager</description>
+        <class>org.springframework.data.jpa.domain.AbstractPersistable</class>
+        <class>org.springframework.data.jpa.domain.AbstractAuditable</class>
+        <class>application.entities.OrganizationEntity</class>
+        <class>application.entities.EmployeeEntity</class>
+        <class>application.entities.DivisionEntity</class>
+        <class>application.entities.DocumentEntity</class>
+
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+
+        <properties>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL95Dialect"/>
+            <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/documentsApplication"/>
+            <property name="javax.persistence.jdbc.user" value="testuser"/>
+            <property name="javax.persistence.jdbc.password" value="pass"/>
+            <property name="javax.persistence.schema-generation.database.action" value="create"/>
+            <property name="hibernate.connection.url" value="jdbc:postgresql://localhost:5432/documentsApplication"/>
+            <property name="hibernate.connection.driver_class" value="org.postgresql.Driver"/>
+        </properties>
+    </persistence-unit>
+</persistence>
